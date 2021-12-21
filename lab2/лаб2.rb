@@ -1,26 +1,26 @@
-def  check_word
-  print  ( "Введите слово:" )
-  слово  =  получает . чавкать
+def check_word
+  print ("Your word: ")
+  word = gets.chomp
 
-  слово [ - 2 ..- 1 ] == "CS" ? ( p  ( 2 ** word . length ) ) : ( p  ( word . reverse ) )
-конец
+  word[-2..-1] == "CS" ? (p (2 ** word.length)) : (p (word.reverse))
+end
 
-def  create_pokemons
-  print  ( "Сколько будет покемонов?" )
-  kolvo_pokemons  =  получает . to_i
+def create_pokemons
+  print ("How many Pokemon will there be? ")
+  number = gets.to_i
 
-  покемоны  =  [ ]
+  pokemons = []
 
-  kolvo_pokemons . раз  сделать
-    print  ( "Имя покемона:" )
-    имя  =  получает . чавкать
-    print  ( «Цвет покемона:» )
-    цвет  =  получает . чавкать
-    покемоны << {  name  =>  color  }
-  конец
+  number.times do
+    print ("Name of pokemon: ")
+    name = gets.chomp
+    print ("Color of pokemon: ")
+    color = gets.chomp
+    pokemons << { name => color }
+  end
 
-  p  покемоны
-конец
+  p pokemons
+end
 
 check_word
 create_pokemons
