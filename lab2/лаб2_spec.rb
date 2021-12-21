@@ -1,17 +1,21 @@
-требуется  'rspec'
-требуется  './main_lab2.rb'
+require 'rspec'
+require './lab2.rb'
 
-RSpec . описать  "Главное"  сделать
-  это  "#revers_or_pow_first_solution"  сделать
-    ожидать ( revers_or_pow ( "dferCs" ) ) . к  уравнению ( 64 )
-  конец
+RSpec.describe "Main" do
 
-  это  "#revers_or_pow_second_solution"  сделать
-    ожидать ( revers_or_pow ( "Asxcvb" ) ) . в  уравнении ( "bvcxsA" )
-  конец
+  it "#word_test_1" do
+    allow_any_instance_of(Kernel).to receive(:gets).and_return('DaryaCS')
+    expect(check_word).to eq(255)
+  end
 
-  это  "#hash_pokemon"  делать
-    allow_any_instance_of ( ядро ) . чтобы  получить ( : получает ) . and_return ( 2 ,  «пикачу» ,  «желтый» ,  «слоупок» ,  «розовый» )
-    ожидать ( hash_pokemon ) . в  уравнение ( [ { "пикачу"  =>  "желтый" } ,  { "слоупок"  =>  "розовый" } ] )
-  конец
-конец
+  it "#word_test_2" do
+    allow_any_instance_of(Kernel).to receive(:gets).and_return('Darya')
+    expect(check_word).to eq("ayraD")
+  end
+
+  it "#pokemon_test" do
+  		allow_any_instance_of(Kernel).to receive(:gets).and_return(2, "Pikachu", "Yellow", "Slowpoke", "Pink")
+  		expect(create_pokemons).to eq([{ "Pikachu" => "Yellow" }, { "Slowpoke" => "Pink" }])
+  	end
+
+end
