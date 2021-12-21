@@ -1,34 +1,35 @@
-def  greeting
-    print  ( "Ваше имя:" )
-    имя  =  получает . чавкать
-print ("Ваша фамилия:")
-    фамилия =  получает . чавкать
+def greeting
+    print ("Your name: ")
+    name = gets.chomp
 
-    print  ( "Сколько вам лет?" )
-    возраст  =  получает . to_i
+    print ("Your surname:")
+    surname= gets.chomp
 
-    если  возраст < 18
-      p  "Привет, # { name }  # { surname } . Вам меньше 18, но начать программировать никогда не рано"
-    еще
-      p  "Здравствуйте, # { name }  # { surname } . Самое время заняться делом!"
-    конец
-конец
+    print ("Your age:")
+    age = gets.to_i
 
-def  foobar
-  limit_number  =  20
+    if age < 18
+      p "Hi, #{name} #{surname}. You are less then 18, but starting programming is never early"
+    else
+      p "Hello, #{name} #{surname}. Time to work!"
+    end
+end
 
-  print  ( "Введите первое число" )
-  n1  =  получает . to_i
+def foobar
+  limit_number = 20
 
-  print  ( "Введите второе число" )
-  n2  =  получает . to_i
+  print ("First number:")
+  n1 = gets.to_i
 
-  если  n1 == limit_number   или  n2 == limit_number
-    p  n2
-  еще
-    р  n1 + n2
-  конец
-конец
+  print ("Second number:")
+  n2 = gets.to_i
 
-greeting ( )
-foobar ( )
+  if n1 == limit_number  or n2 == limit_number
+    p n2
+  else
+    p n1 + n2
+  end
+end
+
+greeting()
+foobar()
