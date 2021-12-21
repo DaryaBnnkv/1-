@@ -1,26 +1,26 @@
-требуется  'rspec'
-требуется  './лаб1.rb'
+require 'rspec'
+require './lab1.rb'
 
-RSpec . описать  "Главное"  сделать
+RSpec.describe "Main" do
 
-  это  "# greeting_test_1"  делать
-    allow_any_instance_of ( ядро ) . чтобы  получить ( : получает ) . and_return ( 'Дарья' ,  'Банникова' ,  16 )
-    ожидать ( начало ) . to  eq ( «Привет, Дарья Банникова. Вам меньше 18 лет, но начать учиться программировать никогда не рано» )
-  конец
+  it "#greeting_test_1" do
+    allow_any_instance_of(Kernel).to receive(:gets).and_return('Darya', 'Bannikova', 16)
+    expect(greeting).to eq("Hi, Darya Bannikova. You are less then 18, but starting programming is never early")
+  end
 
-  это  "# greeting_test_2"  сделать
-    allow_any_instance_of ( ядро ) . чтобы  получить ( : получает ) . and_return ( 'Дарья' ,  'Банникова' ,  20 )
-    ожидать ( приветствие ) . to  eq ( «Здравствуйте, Дарья Банникова. Самое время заняться делом!» )
-  конец
+  it "#greeting_test_2" do
+    allow_any_instance_of(Kernel).to receive(:gets).and_return('Darya', 'Bannikova', 19)
+    expect(greeting).to eq("Hello, Darya Bannikova. Time to work!")
+  end
 
-  это  "# foobar_test_1"  сделать
-    allow_any_instance_of ( ядро ) . чтобы  получить ( : получает ) . and_return ( 10 ,  1 )
-    ожидать ( foobar ) . к  уравнению ( 11 )
-  конец
+  it "#foobar_test_1" do
+    allow_any_instance_of(Kernel).to receive(:gets).and_return(3, 4)
+    expect(foobar).to eq(7)
+  end
 
-  это  "# foobar_test_1"  сделать
-    allow_any_instance_of ( ядро ) . чтобы  получить ( : получает ) . and_return ( 4 ,  20 )
-    ожидать ( foobar ) . к  уравнению ( 20 )
-  конец
+  it "#foobar_test_1" do
+    allow_any_instance_of(Kernel).to receive(:gets).and_return(3, 20)
+    expect(foobar).to eq(20)
+  end
 
-конец
+end
